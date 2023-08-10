@@ -1,0 +1,76 @@
+SOLUTION 1 ----------------//----------------------
+
+Procédure dot_product(v1, v2, ps)
+    ps <- 0
+    Pour i allant de 1 à taille_de(v1)
+        ps <- ps + (v1[i] * v2[i])
+    Fin Pour
+Fin Procédure
+
+Algorithme vecteurs_orthogonaux()
+    Lire n  // Nombre de paires de vecteurs
+    Pour k allant de 1 à n
+        Lire taille  // Taille des vecteurs
+        Déclarer v1[taille], v2[taille]  // Vecteurs v1 et v2
+        Pour i allant de 1 à taille
+            Lire v1[i]
+        Fin Pour
+        Pour i allant de 1 à taille
+            Lire v2[i]
+        Fin Pour
+
+        Déclarer produit_scalaire
+        Appeler dot_product(v1, v2, produit_scalaire)
+        
+        Si produit_scalaire = 0
+            Afficher "Les vecteurs sont orthogonaux."
+        Sinon
+            Afficher "Les vecteurs ne sont pas orthogonaux."
+        Fin Si
+    Fin Pour
+Fin Algorithme
+
+// Appel de l'algorithme principal
+vecteurs_orthogonaux()
+
+
+SOLUTION 2 -----------//--------
+
+
+Fonction dot_product(v1, v2)
+    ps <- 0
+    Pour i allant de 1 à taille_de(v1)
+        ps <- ps + (v1[i] * v2[i])
+    Fin Pour
+    Retourner ps
+Fin Fonction
+
+Algorithme vecteurs_orthogonaux()
+    Lire n  // Nombre de paires de vecteurs
+    Pour k allant de 1 à n
+        Lire taille  // Taille des vecteurs
+        Déclarer v1[taille], v2[taille]  // Vecteurs v1 et v2
+        Pour i allant de 1 à taille
+            Lire v1[i]
+        Fin Pour
+        Pour i allant de 1 à taille
+            Lire v2[i]
+        Fin Pour
+
+        Déclarer produit_scalaire
+        produit_scalaire <- dot_product(v1, v2)
+        
+        Si produit_scalaire = 0
+            Afficher "Les vecteurs sont orthogonaux."
+        Sinon
+            Afficher "Les vecteurs ne sont pas orthogonaux."
+        Fin Si
+    Fin Pour
+Fin Algorithme
+
+// Appel de l'algorithme principal
+vecteurs_orthogonaux()
+
+
+
+

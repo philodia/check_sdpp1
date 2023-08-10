@@ -1,0 +1,37 @@
+Algorithme somme_elements_distincts(ensemble1, ensemble2)
+    ensemble_total <- fusionner(ensemble1, ensemble2)
+    ensemble_distinct <- creer_ensemble_distinct(ensemble_total)
+    somme <- 0
+    Pour chaque element dans ensemble_distinct
+        somme <- somme + element
+    Fin Pour
+    Retourner somme
+Fin Algorithme
+
+Algorithme fusionner(ensemble1, ensemble2)
+    tableau_fusion <- tableau_vide
+    Pour chaque element dans ensemble1
+        Ajouter element à tableau_fusion
+    Fin Pour
+    Pour chaque element dans ensemble2
+        Si element n'est pas dans tableau_fusion
+            Ajouter element à tableau_fusion
+        Fin Si
+    Fin Pour
+    Retourner tableau_fusion
+Fin Algorithme
+
+Algorithme creer_ensemble_distinct(tableau)
+    ensemble_distinct <- ensemble_vide
+    Pour chaque element dans tableau
+        Si element n'est pas dans ensemble_distinct
+            Ajouter element à ensemble_distinct
+        Fin Si
+    Fin Pour
+    Retourner ensemble_distinct
+Fin Algorithme
+
+Ensemble1 <- [3, 1, 7, 9]
+Ensemble2 <- [2, 4, 1, 9, 3]
+Resultat <- somme_elements_distincts(Ensemble1, Ensemble2)
+Afficher "Sortie :", Resultat  // Cela devrait afficher "Sortie : 13"
